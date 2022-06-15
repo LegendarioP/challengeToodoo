@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.conteiner {
+    width: auto;
+    border: 2px solid red;
+    border-radius: 25px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 100px;
+}
+.button {
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.alert01 {
+    border: 2px solid blue;
+    border-radius: 6px;
+    padding: 5px;
+    justify-content: center;
+    height: fit-content;
+}
+.alert01:hover {
+    text-decoration: underline;
+}
+
+li {
+    text-decoration: underline;
+}
+li:last-child {
+    text-decoration: none;
+}
+
+tbody, tr, td {
+    text-align: center;
+}
+
+tr:first-child td {
+    font-weight: 800;
+}
+
+td {
+    padding: 2px;
+    border: 1px solid whitesmoke;
+}
+
+.box1 { grid-area: header; }
+.box2 { grid-area: menu; }
+.box3 { grid-area: main; }
+.box4 { grid-area: right; }
+.box5 { grid-area: footer; }
+
+.wrapper {
+    display: grid;
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main right right'
+      'menu footer footer footer footer footer';
+    gap: 10px;
+    background-color: #838383;
+    padding: 10px;
+  }
+  
+  .wrapper > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+
+  .responsiva{
+    display: grid;
+    height: 100vh;
+    grid-template-areas: 
+      "a a a a    a a a a    a a a a"
+  
+      "b b b b    b b b b    e e e e"
+      "b b b b    b b b b    e e e e"
+  
+      "c c c c    d d d d    e e e e";
+  
+    grid-gap: 20px;
+  }
+  
+  .a{
+    grid-area: a;
+  }
+  .b{
+    grid-area: b;
+  }
+  .c{
+    grid-area: c;
+  }
+  .d{
+    grid-area: d;
+  }
+  .e{
+    grid-area: e;
+  }
+  
+@media(max-width:769px){
+    .responsiva{
+        grid-template-areas: 
+  
+      "a a a a    a a a a    a a a a"
+  
+      "b b b b    b b b b    b b b b"
+      "b b b b    b b b b    b b b b"
+  
+      "c c c c    c c d d    d d d d"
+      "e e e e    e e e e    e e e e";
+    }
+}
+
+.responsiva > div {
+    background: red;
+    border: 10px solid black;
+}
